@@ -93,7 +93,13 @@ if (!empty($_GET["action"])) {
     </nav>
     <!-- Page Content -->
     <div class="container">
+        <br />
+        <br />
+    <div class="font-weight-bold">References: https://phppot.com/php/simple-php-shopping-cart/</div>
+    <br />
         <div class="row">
+        
+        
             <div class="col-lg-3">
                 <h1 class="my-4">Delivery service</h1>
                 <div class="list-group">

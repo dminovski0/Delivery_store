@@ -148,10 +148,20 @@ if (!empty($_GET["action"])) {
                 ?>
                 <br />
                 <div class="row">
+                    <div class="col-sm">Delivery:</div>
+                    <div class="col-sm"><?php echo $total_quantity; ?></div>
+                    <div class="col-sm font-weight-bold"><?php echo "$ " . $total_quantity * 10; ?></div>
+                    <div class="col-sm font-weight-bold"><?php echo "€ " . $total_quantity * 10 * 0.87; ?></div>
+                </div>
+                <?php
+                $total_price_delivery = array(number_format($total_price, 2), $total_quantity * 10);
+                $total_price_delivery_euro = array(round(number_format($total_price, 2) * 0.87, 2), $total_quantity * 10 * 0.87);
+                ?>
+                <div class="row">
                     <div class="col-sm">Total:</div>
                     <div class="col-sm"><?php echo $total_quantity; ?></div>
-                    <div class="col-sm font-weight-bold"><?php echo "$ " . number_format($total_price, 2); ?></div>
-                    <div class="col-sm font-weight-bold"><?php echo "€ " . round(number_format($total_price, 2) * 0.87, 2); ?></div>
+                    <div class="col-sm font-weight-bold"><?php echo "$ " . array_sum($total_price_delivery); ?></div>
+                    <div class="col-sm font-weight-bold"><?php echo "€ " . array_sum($total_price_delivery_euro); ?></div>
                 </div>
 
 
@@ -206,7 +216,6 @@ if (!empty($_GET["action"])) {
 
             <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
 </div>
-
 
     <div>
         <p style="font-style: italic; font-family: 'Cedarville Cursive', cursive; text-align: center; font-size: 5em; color: CornflowerBlue;">
