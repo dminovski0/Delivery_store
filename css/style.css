@@ -1,0 +1,114 @@
+.box {
+    vertical-align: top;
+    box-sizing: border-box;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+    .box {
+        display: block;
+    }
+    .one {
+        width: 100%;
+    }
+    .two {
+        width: 100%;
+    }
+    .three {
+        width: 100%;
+    }
+    .four {
+        width: 100%;
+    }
+    
+    .five {
+        width: 100%;
+    }
+    .six {
+        width: 100%;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.logo {
+    width:20em; height: 15em;
+}
+
+.menu-color {
+    color: CornflowerBlue;
+}
+
+.menu-padding {
+    padding: 10px;
+}
+
+.table-margin {
+    margin: 0px auto;
+}
+
+.header-main {
+    font-size: 200%; font-weight: bold; text-align: center; padding: 0 30px;
+}
+
+.types {
+    max-width: 100%; width: 50em; height: 25em;
+}
+
+.subheadings {
+    font-size: 100%; font-weight: bold; text-align: center; padding: 0 30px; color:teal;
+}
+
+.subimages {
+    width:7em; height: 7em;
+}
+
+.subparagraphs {
+    font-size: 75%; font-weight: bold; text-align: justify; height: 10em;
+}
+
+.subbuttons {
+    background-color: lightgreen; font-weight: bold; height: 5em; width: 7em; text-align: center;
+}
+
+.box-width {
+    width:200px; display: inline-block; margin:1em;
+}
+
+.subnumbers {
+    font-size: 75%; font-weight: bold; text-align: center; height: 5em; width: 7em; border-width: 1em;
+}
+
+.container {
+    background-color: lightblue; margin:0px auto; text-align: center;
+}
+
+.cart-images {
+    width:5em; height: 5em;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: #E0E0E0 1px solid;
+    padding: 5px;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.no-records {
+	text-align: center;
+	clear: both;
+	margin: 38px 0px;
+}
+
+btnAddAction {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #efefef;
+    border: #E0E0E0 1px solid;
+    color: #211a1a;
+    float: right;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
