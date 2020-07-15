@@ -54,6 +54,10 @@ if (!empty($_GET["action"])) {
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="css/bootstrap-form-helpers.min.css" rel="stylesheet">
+<script src="vendor/bootstrapformhelpers/js/bootstrap-formhelpers.min.js"></script>
+<link href="vendor/bootstrapformhelpers/css/bootstrap-formhelpers.min.css" rel="stylesheet">
+
     <title>
         Store
     </title>
@@ -91,52 +95,14 @@ if (!empty($_GET["action"])) {
             </div>
         </div>
     </nav>
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <h1 class="my-4">Delivery service</h1>
-                <div class="list-group">
-                    <a href="services.php" class="list-group-item">Online Process</a>
-                    <a href="services.php" class="list-group-item">Product Choice</a>
-                    <a href="services.php" class="list-group-item">Quick Delivery</a>
-                </div>
-            </div>
-            <!-- /.col-lg-3 -->
-            <div class="col-lg-9">
-                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="images/banner.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="images/banner2.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="images/banner3.jpg" alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!------------------------------------ Cart ------------------------------------>
 
-        <br />
+    <div class="container h-20">
+  <div class="row h-20 justify-content-center align-items-center">
+    <div class="mr-10 p-5 text-center font-weight-bold">Order Form</div>
+  </div>
+</div>
 
-        <a class="btnEmpty" href="index.php?action=empty">Empty Cart</a>
+    <a class="btnEmpty" href="index.php?action=empty">Empty Cart</a>
         <?php
         if (isset($_SESSION["cart_item"])) {
             $total_quantity = 0;
@@ -198,68 +164,48 @@ if (!empty($_GET["action"])) {
             ?>
             </div>
             <!------------------------------------ Cart end ------------------------------------>
+            
+    
             <br />
             <br />
             <br />
-            <div class="subcontainer">
-                <?php
-                $i = 0;
-                $product_array = $db_handle->runQuery("SELECT * FROM pizzaproduct ORDER BY id ASC");
-                if (!empty($product_array)) {
-                    for ($i = 0; $i < count($product_array); $i++) {
-                        if ($product_array[$i]%4==0){
-                ?>
-                <div class="row">
-                    <?php
-                        }
-                        ?>
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <form class="card-body d-flex flex-column" method="post" action="index.php?action=add&code=<?php echo $product_array[$i]["code"]; ?>">
-                                    <a href="#"><img class="card-img-top" src="<?php echo $product_array[$i]["image"]; ?>" alt=""></a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h4 class="card-title">
-                                            <a href="#"><?php echo $product_array[$i]["name"]; ?></a>
-                                        </h4>
-                                        <h5><?php echo "$" . $product_array[$i]["price"]; ?></h5>
-                                        <h5><?php echo "€" . $product_array[$i]["price_euro"]; ?></h5>
-                                        <div class="card-text"><?php echo $product_array[$i]["description"]; ?></div>
-                                        <br />
-                                        <div class="cart-action mt-auto"><input type="text" class="btn btn-default border border-secondary" name="quantity" value="1" size="2" />
-                                            <br />
-                                            <br />
-                                            <input type="submit" value="Add to Cart" class="btn btn-primary" /></div>
-                                    </div>
-                                    </form>
-                                    <div class="card-footer mt-auto">
-                                        <div class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</div>
-                                    </div>
-                                
-                            </div>
-                        </div>
-
-                        <?php
-                
-                        if ($product_array[$i]%4==0){
-                ?>
-                </div>
-                    <?php
-                        }
-                        ?>
-
-                <?php
-                    }
-                }
-                ?>
-
-
+            <div class="container">
+  <div class=" mx-auto row w-50">
+            <form class="col d-flex flex-column" action="order.php">
+            <div class="form-group text-center">
+    <label for="first_name">First Name:</label>
+    <input type="text" class="form-control" id="first_name">
+  </div>
+  <div class="form-group text-center">
+    <label for="last_name">Last Name:</label>
+    <input type="text" class="form-control" id="last_name">
+  </div>
+  <div class="form-group text-center">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group text-center">
+    <label for="address">Address:</label>
+    <input type="text" class="form-control" id="address">
+  </div>
+  <div class="form-group text-center">
+    <label for="phone">Phone Number:</label>
+    <input type="tel" class="form-control" id="phone">
+  </div>
+  <div class="form-group text-center">
+    <label for="credit_card">Credit Card:</label>
+    <input type="tel" class="form-control" id="credit_card">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Subscribe to Newsletter</label>
+  </div>
+  <button type="submit" class="btn btn-secondary font-weight-bold">Submit</button>
+</form>
+  </div>
             </div>
-    </div>
 
-
-    <br />
-    <br />
-    <br />
+            <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
+</div>
 
 
     <div>
