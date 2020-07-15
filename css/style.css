@@ -69,7 +69,7 @@
 }
 
 .subbuttons {
-    background-color: lightgreen; font-weight: bold; height: 5em; width: 7em; text-align: center;
+    background-color: orange; font-weight: bold;  width: 7em; text-align: center;
 }
 
 .box-width {
@@ -77,11 +77,17 @@
 }
 
 .subnumbers {
-    font-size: 75%; font-weight: bold; text-align: center; height: 5em; width: 7em; border-width: 1em;
+    font-size: 75%; font-weight: bold; text-align: center;  width: 7em; border-width: 1em;
 }
 
-.container {
-    background-color: lightblue; margin:0px auto; text-align: center;
+.subcontainer {
+    margin:0px auto; text-align: center;
+    
+    display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
 }
 
 .cart-images {
@@ -111,4 +117,65 @@ btnAddAction {
     text-decoration: none;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.same-height {
+    display: flex;
+  flex-direction: column;
+}
+
+.cart-item-image {
+	width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: #E0E0E0 1px solid;
+    padding: 5px;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.btnAddAction {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #efefef;
+    border: #E0E0E0 1px solid;
+    color: #211a1a;
+    float: right;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#shopping-cart {
+	margin: 40px;
+}
+
+.btnEmpty {
+	background-color: #ffffff;
+	border: #d00000 1px solid;
+	padding: 5px 10px;
+	color: #d00000;
+	float: right;
+	text-decoration: none;
+	border-radius: 3px;
+	margin: 10px 0px;
+}
+
+.shop-cart {
+    display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+
+.shop-item {
+    display: flex;
+  flex-direction: column;
+}
+
+.no-records {
+	text-align: center;
+	clear: both;
+	margin: 38px 0px;
 }
